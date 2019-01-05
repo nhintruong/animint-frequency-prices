@@ -1,0 +1,36 @@
+---
+title: "Errors/Issues in animint use for beginners"
+output:
+  html_document:
+---
+```{r}
+library(ggplot2)
+library(animint)
+```
+
+```{r}
+#Issue 1:
+```
+
+
+```{r warning=FALSE}
+gg_anm2_sel <- ggplot(df) + geom_line(aes(x=df$Trade.Date, y=df$USD.AF8.FUT, 
+                                          linetype=df$bucket, clickSelects=df$bucket))
+#problem with linetype & clickSelects=df$bucket  #ok with linetype & clickSelects=bucket
+plot <- list(plot=gg_anm2_sel)
+structure(plot, class="animint")
+```
+
+```{r warning=FALSE}
+gg_anm2_sel <- ggplot(df) + geom_line(aes(x=df$Trade.Date, y=df$USD.AF8.FUT, 
+                                          linetype=bucket, clickSelects=bucket))
+plot <- list(plot=gg_anm2_sel)
+library(animint)
+structure(plot, class="animint")
+#no error and graph opening correctly
+```
+
+```{r}
+# Issue2: On scale_*_discrete, variables can't be changed by clicking on the legends
+```
+
