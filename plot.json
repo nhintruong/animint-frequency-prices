@@ -346,5 +346,6 @@
 ] 
 } 
 },
-"title": "frequency of stock prices" 
+"title": "frequency of stock prices",
+"source": "https://github.com/nhintruong/animint-frequency-prices/blob/master/medium_edited_final.Rmd"
 }
